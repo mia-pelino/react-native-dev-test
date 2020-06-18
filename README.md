@@ -1,4 +1,4 @@
-silverorange React Native Developer Assessment
+Hippo React Native Developer Assessment
 ==============================================
 
 This exercise is designed to assess how you approach tasks required in your
