@@ -2,13 +2,12 @@ Hippo React Native Developer Assessment
 ==============================================
 
 This exercise is designed to assess how you approach tasks required in your
-position as a React Native developer at silverorange. We are interested to see
-how you work as well, as what your final results are; include useful Git commit
+position as a React Native developer at Hippo. We are interested to see
+how you work as well as what your final results are; include useful Git commit
 messages and comments where you think your code may be unclear.
 
 Please do not include your name or any other self-identifying information in
-code or commit messages as silverorange will anonymize your work before
-reviewing.
+code or commit messages so we can anonymize your work before reviewing.
 
 Tasks
 -----
@@ -27,9 +26,13 @@ Using the provided Expo application in `/native`:
  6. Include a way to return to the main screen with posts and authors.
  7. Include some platform-specific variation between iOS and Android on either
     the main screen or the post screen.
- 8. Implement basic snapshot regression tests tests using Jest for your
-    components. Jest is installed in the Expo project and can be run from the
-    `native/` folder with `yarn test`.
+ 8. Implement tests using Jest for your components. Jest is installed in the
+    Expo project and can be run from the `native/` folder with `yarn test`.
+    We are most interested in your overall approach to testing -- e.g. what
+    you choose to test -- not the exact implementation of your tests. If you're
+    new to testing or are having trouble, we'd prefer to see a full suite of
+    dummy tests that outline a good testing strategy than 1 or 2 working tests
+    that don't really test anything of substance.
 
 The post body is formatted as Markdown and the post screen should use the
 formatted Markdown.
