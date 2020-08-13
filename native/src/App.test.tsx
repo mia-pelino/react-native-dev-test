@@ -12,18 +12,14 @@ const mockedService = mocked(useGetLatinPostService, true);
 
 describe('<App />', () => {
   test('renders without crashing', () => {
-    let tree;
-
     const expectedResult: Service<LatinPost> = {
       status: 'loading',
     };
     mockedService.mockReturnValueOnce(expectedResult);
 
-    act(() => {
-      tree = renderer.create(<App />).toJSON();
-    });
+    const tree = renderer.create(<App />).toJSON();
 
-    expect(tree).toBeNull();
+    expect(tree).not.toBeNull();
   });
 
   it('renders ActivityIndicator component while loading', () => {
