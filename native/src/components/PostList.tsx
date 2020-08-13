@@ -1,20 +1,32 @@
-import React from 'react';
-import { FlatList, View, Text, StyleSheet } from 'react-native';
-import { LatinPosts } from '../services/useGetLatinPostService';
-import { LatinPost } from '../types/LatinPost';
+import React, { useState } from 'react';
+import {
+  FlatList,
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+import { Posts } from '../services/useGetPostService';
+import { Post } from '../types/Post';
 
-const PostList: React.FC<any> = (postList: LatinPosts) => {
-  const sortPostsReverseChronologically = (posts: LatinPost[]): LatinPost[] => {
+const PostList: React.FC<any> = (postList: Posts) => {
+  const sortPostsReverseChronologically = (posts: Post[]): Post[] => {
     return [].slice
       .call(posts)
       .sort(
-        (newer: LatinPost, older: LatinPost): number =>
+        (newer: Post, older: Post): number =>
           new Date(older.publishedAt).getTime() -
           new Date(newer.publishedAt).getTime()
       );
   };
 
   const sortedPosts = sortPostsReverseChronologically(postList.posts);
+
+  const [posts, setPosts] = useState<Post[]>(sortedPosts);
+
+  const filterByAuthor = (authorName: string) => {
+    setPosts(posts.filter((post) => post.author.name == authorName));
+  };
 
   const formatSummary = (body: string): string =>
     body.split(/\n\n/)[1].slice(2, 40);
@@ -27,12 +39,14 @@ const PostList: React.FC<any> = (postList: LatinPosts) => {
   return (
     <FlatList
       style={styles.list}
-      data={sortedPosts}
+      data={posts}
       renderItem={({ item }) => (
         <View style={styles.posts}>
           <Text>Title: {item.title}</Text>
           <Text>Summary: {formatSummary(item.body)}</Text>
-          <Text>Author: {item.author.name}</Text>
+          <TouchableOpacity onPress={() => filterByAuthor(item.author.name)}>
+            <Text style={styles.author}>Author: {item.author.name}</Text>
+          </TouchableOpacity>
           <Text>Date: {formatDate(item.publishedAt.toString())}</Text>
         </View>
       )}
@@ -48,5 +62,8 @@ const styles = StyleSheet.create({
   },
   posts: {
     margin: 15,
+  },
+  author: {
+    color: '#FF0054',
   },
 });

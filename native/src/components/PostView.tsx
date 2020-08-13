@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
-import useGetLatinPostService from '../services/useGetLatinPostService';
+import useGetLatinPostService, { Posts } from '../services/useGetPostService';
 import PostList from './PostList';
 
-const LatinPosts: React.FC<{}> = () => {
+const PostView: React.FC<{}> = () => {
   const service = useGetLatinPostService();
 
   return (
@@ -15,7 +15,7 @@ const LatinPosts: React.FC<{}> = () => {
   );
 };
 
-export default LatinPosts;
+export default PostView;
 
 const styles = StyleSheet.create({
   container: {

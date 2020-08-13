@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import { LatinPost } from '../types/LatinPost';
+import { Post } from '../types/Post';
 import { Service } from '../types/Service';
 
-export interface LatinPosts {
-  posts: LatinPost[];
+export interface Posts {
+  posts: Post[];
 }
 
-const useGetLatinPostService = () => {
-  const [result, setResult] = useState<Service<LatinPosts>>({
+const useGetPostService = () => {
+  const [result, setResult] = useState<Service<Posts>>({
     status: 'loading',
   });
 
@@ -21,4 +21,4 @@ const useGetLatinPostService = () => {
   return result;
 };
 
-export default useGetLatinPostService;
+export default useGetPostService;

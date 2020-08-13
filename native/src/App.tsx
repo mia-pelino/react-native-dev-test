@@ -1,6 +1,6 @@
 import React from 'react';
-import LatinPosts from './components/LatinPosts';
+import Posts from './components/PostView';
 
 export function App() {
-  return <LatinPosts />;
+  return <Posts />;
 }

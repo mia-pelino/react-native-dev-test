@@ -3,7 +3,7 @@ export interface Author {
   name: string;
 }
 
-export interface LatinPost {
+export interface Post {
   author: Author;
   body: string;
   id: string;

@@ -2,18 +2,16 @@ import React from 'react';
 import renderer, { create } from 'react-test-renderer';
 import { mocked } from 'ts-jest/utils';
 import 'isomorphic-fetch';
-import useGetLatinPostService, {
-  LatinPosts,
-} from './services/useGetLatinPostService';
+import useGetPostService, { Posts } from './services/useGetPostService';
 import { Service } from './types/Service';
 import { App } from './App';
 
-jest.mock('./services/useGetLatinPostService');
-const mockedService = mocked(useGetLatinPostService, true);
+jest.mock('./services/useGetPostService');
+const mockedService = mocked(useGetPostService, true);
 
 describe('<App />', () => {
   test('renders without crashing', () => {
-    const expectedResult: Service<LatinPosts> = {
+    const expectedResult: Service<Posts> = {
       status: 'loading',
     };
     mockedService.mockReturnValueOnce(expectedResult);
@@ -24,7 +22,7 @@ describe('<App />', () => {
   });
 
   it('renders ActivityIndicator component while loading', () => {
-    const expectedResult: Service<LatinPosts> = {
+    const expectedResult: Service<Posts> = {
       status: 'loading',
     };
     mockedService.mockReturnValueOnce(expectedResult);
@@ -35,9 +33,9 @@ describe('<App />', () => {
     expect(tree.children[0].type).not.toBe('Text');
   });
 
-  //TODO: find a way to assert on results
-  it('displays number of posts returned when loaded', () => {
-    const expectedResult: Service<LatinPosts> = {
+  //TODO: find a way to actually assert on results
+  it('displays post list reverse chronologically when loaded', () => {
+    const expectedResult: Service<Posts> = {
       status: 'loaded',
       payload: {
         posts: [
@@ -72,7 +70,7 @@ describe('<App />', () => {
   });
 
   it('displays error message when loaded with error', () => {
-    const expectedResult: Service<LatinPosts> = {
+    const expectedResult: Service<Posts> = {
       status: 'error',
       error: new Error(),
     };
@@ -85,7 +83,7 @@ describe('<App />', () => {
   });
 
   it('matches the snapshot', () => {
-    const expectedResult: Service<LatinPosts> = {
+    const expectedResult: Service<Posts> = {
       status: 'loading',
     };
     mockedService.mockReturnValueOnce(expectedResult);
