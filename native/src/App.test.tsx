@@ -27,10 +27,10 @@ describe('<App />', () => {
     };
     mockedService.mockReturnValueOnce(expectedResult);
 
-    const tree = renderer.create(<App />).toJSON();
+    const tree = renderer.create(<App />).toJSON().children[1].children[0];
 
-    expect(tree.children[0].type).toBe('ActivityIndicator');
-    expect(tree.children[0].type).not.toBe('Text');
+    expect(tree.type).toBe('ActivityIndicator');
+    expect(tree.type).not.toBe('Text');
   });
 
   //TODO: find a way to actually assert on results
@@ -76,7 +76,8 @@ describe('<App />', () => {
     };
     mockedService.mockReturnValueOnce(expectedResult);
 
-    const tree = renderer.create(<App />).toJSON().children[0];
+    const tree = renderer.create(<App />).toJSON().children[1].children[0];
+
 
     expect(tree.type).not.toBe('ActivityIndicator');
     expect(tree.children[0]).toBe('Oops, I did it again.');

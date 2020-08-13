@@ -1,21 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> matches the snapshot 1`] = `
-<View
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#fff",
       "flex": 1,
-      "justifyContent": "center",
     }
   }
 >
-  <ActivityIndicator
-    animating={true}
-    color="#999999"
-    hidesWhenStopped={true}
-    size="small"
-  />
-</View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#A5FFD6",
+        "height": "8%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "alignContent": "center",
+          "color": "#FF0054",
+          "fontFamily": "Chalkduster",
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "marginLeft": 10,
+          "marginTop": 20,
+        }
+      }
+    >
+      Latin Daily Reader
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#999999"
+      hidesWhenStopped={true}
+      size="small"
+    />
+  </View>
+</RCTSafeAreaView>
 `;

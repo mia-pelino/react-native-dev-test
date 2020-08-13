@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, SafeAreaView, Platform } from 'react-native';
 export function App() {
   const headerContainerStyle = () => Platform.OS === 'ios'
   ? osStyles.iosHeaderContainer : osStyles.androidHeaderContainer;
+  
   const headerStyle = () => Platform.OS === 'ios'
   ? osStyles.iosHeader : osStyles.androidHeader;
 
