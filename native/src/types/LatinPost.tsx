@@ -7,6 +7,6 @@ export interface LatinPost {
   author: Author;
   body: string;
   id: string;
-  publishedAt: string;
+  publishedAt: Date;
   title: string;
 }

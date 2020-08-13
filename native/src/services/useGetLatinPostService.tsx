@@ -3,7 +3,7 @@ import { LatinPost } from '../types/LatinPost';
 import { Service } from '../types/Service';
 
 export interface LatinPosts {
-  results: LatinPost[];
+  posts: LatinPost[];
 }
 
 const useGetLatinPostService = () => {
