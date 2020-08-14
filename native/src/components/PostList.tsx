@@ -1,33 +1,16 @@
 import React, { useState } from 'react';
-import {
-  FlatList,
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
-import { Posts } from '../services/useGetPostService';
+import { FlatList, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Post } from '../types/Post';
 
-const PostList: React.FC<any> = (postList: Posts) => {
-  const sortPostsReverseChronologically = (posts: Post[]): Post[] => {
-    return [].slice
-      .call(posts)
-      .sort(
-        (newer: Post, older: Post): number =>
-          new Date(older.publishedAt).getTime() -
-          new Date(newer.publishedAt).getTime()
-      );
-  };
+//TODO: indicator that pressing author sorts
+//TODO: button to go back to full list
+type Props = {
+  postList: Post[];
+  pressAuthorHandler: (name: string) => void;
+  pressPostHandler: (title: string, body: string) => void;
+}
 
-  const sortedPosts = sortPostsReverseChronologically(postList.posts);
-
-  const [posts, setPosts] = useState<Post[]>(sortedPosts);
-
-  const filterByAuthor = (authorName: string) => {
-    setPosts(posts.filter((post) => post.author.name == authorName));
-  };
-
+const PostList: React.FC<Props> = ({postList, pressAuthorHandler, pressPostHandler}) => {
   const formatSummary = (body: string): string =>
     body.split(/\n\n/)[1].slice(2, 40);
 
@@ -39,16 +22,16 @@ const PostList: React.FC<any> = (postList: Posts) => {
   return (
     <FlatList
       style={styles.list}
-      data={posts}
+      data={postList}
       renderItem={({ item }) => (
-        <View style={styles.posts}>
+        <TouchableOpacity style={styles.posts} onPress={() => {pressPostHandler(item.title, item.body)}}>
           <Text>Title: {item.title}</Text>
           <Text>Summary: {formatSummary(item.body)}</Text>
-          <TouchableOpacity onPress={() => filterByAuthor(item.author.name)}>
+          <TouchableOpacity onPress={() => pressAuthorHandler(item.author.name)}>
             <Text style={styles.author}>Author: {item.author.name}</Text>
           </TouchableOpacity>
           <Text>Date: {formatDate(item.publishedAt.toString())}</Text>
-        </View>
+        </TouchableOpacity>
       )}
     />
   );
@@ -61,9 +44,14 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   posts: {
-    margin: 15,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    backgroundColor: '#84DCC6',
+    padding: 8,
+    borderRadius: 8,
   },
   author: {
-    color: '#FF0054',
+    color: '#000',
+    fontWeight: 'bold',
   },
 });

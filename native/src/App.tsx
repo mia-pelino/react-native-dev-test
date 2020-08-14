@@ -1,36 +1,60 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import Posts from './components/PostView';
-import { StyleSheet, Text, View, SafeAreaView, Platform } from 'react-native';
+import { StyleSheet, Text, View, Platform, SafeAreaView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Posts from './components/Posts';
+import FullPost from './components/FullPost';
+import { RootStackParamList } from './types/RootStackParamList';
+
+const RootStack = createStackNavigator<RootStackParamList>();
 
 export function App() {
-  const headerContainerStyle = () => Platform.OS === 'ios'
-  ? osStyles.iosHeaderContainer : osStyles.androidHeaderContainer;
-  
-  const headerStyle = () => Platform.OS === 'ios'
-  ? osStyles.iosHeader : osStyles.androidHeader;
+  const headerContainerStyle = () =>
+    Platform.OS === 'ios'
+      ? osStyles.iosHeaderContainer
+      : osStyles.androidHeaderContainer;
+
+  const headerStyle = () =>
+    Platform.OS === 'ios' ? osStyles.iosHeader : osStyles.androidHeader;
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={headerContainerStyle()}>
-        <Text style={headerStyle()}>Latin Daily Reader</Text>
-      </View>
-      <Posts />
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={styles.container}>
+        <View style={headerContainerStyle()}>
+          <Text style={headerStyle()}>Latin Daily Reader</Text>
+        </View>
+        <RootStack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <RootStack.Screen name="Home" component={Posts} />
+          <RootStack.Screen name="FullPost" component={FullPost} />
+        </RootStack.Navigator>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
+//TODO: move styles to separate file
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000',
   },
   headerContainer: {
-    backgroundColor: '#A5FFD6',
+    backgroundColor: '#FF686B',
     alignItems: 'center',
+    marginBottom: 10,
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 5,
   },
   header: {
     fontSize: 20,
     marginLeft: 10,
-    color: '#FF0054',
+    color: '#FFF',
     alignContent: 'center',
     fontWeight: 'bold',
   },
@@ -45,7 +69,7 @@ const osStyles = StyleSheet.create({
     ...styles.headerContainer,
     height: '8%',
   },
-  iosHeader:  {
+  iosHeader: {
     ...styles.header,
     marginTop: 20,
     fontFamily: 'Chalkduster',
@@ -54,5 +78,5 @@ const osStyles = StyleSheet.create({
     ...styles.header,
     marginTop: 40,
     fontFamily: 'monospace',
-  }
-})
+  },
+});

@@ -78,7 +78,6 @@ describe('<App />', () => {
 
     const tree = renderer.create(<App />).toJSON().children[1].children[0];
 
-
     expect(tree.type).not.toBe('ActivityIndicator');
     expect(tree.children[0]).toBe('Oops, I did it again.');
   });
