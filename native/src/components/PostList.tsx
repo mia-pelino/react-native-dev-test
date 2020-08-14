@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FlatList, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Post } from '../types/Post';
 
