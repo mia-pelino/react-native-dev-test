@@ -28,6 +28,11 @@ const Posts: React.FC<Props> = ({ navigation }) => {
     setIsFiltered(true);
   };
 
+  const displayAllPosts = (): void => {
+    setIsFiltered(false);
+    setPosts(unfilteredPosts);
+  };
+
   const navigateToFullPost = (title: string, body: string): void => {
     navigation?.navigate('FullPost', { title: title, body: body });
   };
@@ -43,7 +48,7 @@ const Posts: React.FC<Props> = ({ navigation }) => {
             filterByAuthor(name);
           }}
           pressPostHandler={(title, body) => navigateToFullPost(title, body)}
-          displayAllPostsHandler={() => setPosts(unfilteredPosts)}
+          displayAllPostsHandler={() => displayAllPosts()}
         />
       )}
       {service.status === 'error' && <Text>Oops, I did it again.</Text>}

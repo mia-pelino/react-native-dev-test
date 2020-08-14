@@ -53,13 +53,13 @@ exports[`<Posts /> matches the snapshot 3`] = `
       style={
         Object {
           "alignSelf": "center",
-          "color": "#FFF",
+          "color": "#FFA69E",
           "fontWeight": "bold",
           "marginTop": 20,
         }
       }
     >
-      Tap an author's name to only their posts.
+      Tap an author's name to only show their posts.
     </Text>
     <RCTScrollView
       data={Array []}

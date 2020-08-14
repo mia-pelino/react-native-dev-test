@@ -41,7 +41,7 @@ const PostList: React.FC<Props> = ({
         </TouchableOpacity>
       ) : (
         <Text style={styles.instruction}>
-          Tap an author's name to only their posts.
+          Tap an author's name to only show their posts.
         </Text>
       )}
       <FlatList
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   instruction: {
-    color: '#FFF',
+    color: '#FFA69E',
     fontWeight: 'bold',
     alignSelf: 'center',
     marginTop: 20,
