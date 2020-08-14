@@ -40,7 +40,7 @@ const Posts: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {service.status === 'loading' && <ActivityIndicator />}
-      {service.status === 'loaded' && (
+      {service.status === 'loaded' && service.payload.length > 0 && (
         <PostList
           postList={posts}
           isFiltered={isFiltered}

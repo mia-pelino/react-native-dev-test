@@ -34,7 +34,7 @@ const PostList: React.FC<Props> = ({
         </TouchableOpacity>
       ) : (
         <Text style={styles.instruction}>
-          Tap an author's name to only show their posts.
+          Press an author's name to only show their posts.
         </Text>
       )}
       <FlatList
@@ -50,11 +50,11 @@ const PostList: React.FC<Props> = ({
             <Text>Title: {item.title}</Text>
             <Text>Summary: {formatSummary(item.body)}</Text>
             <TouchableOpacity
-              onPress={() => pressAuthorHandler(item.author.name)}
+              onPress={() => pressAuthorHandler(item.author?.name)}
             >
-              <Text style={styles.author}>Author: {item.author.name}</Text>
+              <Text style={styles.author}>Author: {item.author?.name}</Text>
             </TouchableOpacity>
-            <Text>Date: {formatDate(item.publishedAt.toString())}</Text>
+            <Text>Date: {formatDate(item.publishedAt?.toString())}</Text>
           </TouchableOpacity>
         )}
       />

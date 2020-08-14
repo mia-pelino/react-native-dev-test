@@ -18,6 +18,18 @@ describe('formatSummary', () => {
 
     expect(result.length).toBe(40);
   });
+
+  it('returns an empty string when passed a null value', () => {
+    let nullString = null;
+
+    expect(formatSummary(nullString)).toBe('');
+  });
+
+  it('returns an empty string when passed an undefined value', () => {
+    let undefined;
+
+    expect(formatSummary(undefined)).toBe('');
+  });
 });
 
 describe('removeMarkdown', () => {
@@ -30,6 +42,18 @@ describe('removeMarkdown', () => {
     expect(result).toBe(
       `"Sometimes I'll start a sentence and I don't even know where it's going." - Michael Scott`
     );
+  });
+
+  it('returns an empty string when passed a null value', () => {
+    let nullString = null;
+
+    expect(removeMarkdown(nullString)).toBe('');
+  });
+
+  it('returns an empty string when passed an undefined value', () => {
+    let undefined;
+
+    expect(removeMarkdown(undefined)).toBe('');
   });
 });
 
@@ -48,5 +72,17 @@ describe('formatDate', () => {
     const result: string = formatDate(testDate);
 
     expect(result).toBe('March 3, 1987');
+  });
+
+  it('returns an empty string when passed a null value', () => {
+    let nullString = null;
+
+    expect(formatDate(nullString)).toBe('');
+  });
+
+  it('returns an empty string when passed an undefined value', () => {
+    let undefined;
+
+    expect(formatDate(undefined)).toBe('');
   });
 });

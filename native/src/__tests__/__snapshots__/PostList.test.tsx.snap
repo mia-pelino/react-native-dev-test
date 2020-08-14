@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PostList /> lists all posts and displays message to tap author for filtering when list is not filtered 1`] = `
+exports[`<PostList /> snapshots displays a single post list when loaded result size is one 1`] = `
 <View>
   <Text
     style={
@@ -12,7 +12,7 @@ exports[`<PostList /> lists all posts and displays message to tap author for fil
       }
     }
   >
-    Tap an author's name to only show their posts.
+    Press an author's name to only show their posts.
   </Text>
   <RCTScrollView
     data={
@@ -26,7 +26,195 @@ exports[`<PostList /> lists all posts and displays message to tap author for fil
 
 ## ta **toes**",
           "id": "a",
-          "publishedAt": 2020-01-01T08:00:00.000Z,
+          "publishedAt": 2020-01-02T08:00:00.000Z,
+          "title": "tater tots",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "alignSelf": "center",
+        "marginTop": 20,
+        "width": "100%",
+      }
+    }
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#84DCC6",
+              "borderRadius": 5,
+              "marginBottom": 15,
+              "marginHorizontal": 10,
+              "opacity": 1,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            }
+          }
+        >
+          <Text>
+            Title: 
+            tater tots
+          </Text>
+          <Text>
+            Summary: 
+            po ta toes
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#000",
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Author: 
+              samwise
+            </Text>
+          </View>
+          <Text>
+            Date: 
+            January 2, 2020
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`<PostList /> snapshots displays an empty post list when loaded results are empty 1`] = `
+<View>
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "color": "#FFA69E",
+        "fontWeight": "bold",
+        "marginTop": 20,
+      }
+    }
+  >
+    Press an author's name to only show their posts.
+  </Text>
+  <RCTScrollView
+    data={Array []}
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "alignSelf": "center",
+        "marginTop": 20,
+        "width": "100%",
+      }
+    }
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View />
+  </RCTScrollView>
+</View>
+`;
+
+exports[`<PostList /> snapshots displays full post list 1`] = `
+<View>
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "color": "#FFA69E",
+        "fontWeight": "bold",
+        "marginTop": 20,
+      }
+    }
+  >
+    Press an author's name to only show their posts.
+  </Text>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "author": Object {
+            "id": "1",
+            "name": "samwise",
+          },
+          "body": "po 
+
+## ta **toes**",
+          "id": "a",
+          "publishedAt": 2020-01-02T08:00:00.000Z,
           "title": "tater tots",
         },
         Object {
@@ -38,7 +226,7 @@ exports[`<PostList /> lists all posts and displays message to tap author for fil
 
 ## em",
           "id": "b",
-          "publishedAt": 2020-01-02T08:00:00.000Z,
+          "publishedAt": 2020-01-01T08:00:00.000Z,
           "title": "mashed potatoes",
         },
       ]
@@ -140,7 +328,7 @@ exports[`<PostList /> lists all posts and displays message to tap author for fil
           </View>
           <Text>
             Date: 
-            January 1, 2020
+            January 2, 2020
           </Text>
         </View>
       </View>
@@ -206,535 +394,6 @@ exports[`<PostList /> lists all posts and displays message to tap author for fil
             >
               Author: 
               gamgee
-            </Text>
-          </View>
-          <Text>
-            Date: 
-            January 2, 2020
-          </Text>
-        </View>
-      </View>
-    </View>
-  </RCTScrollView>
-</View>
-`;
-
-exports[`<PostList /> matches the snapshot 1`] = `
-<View>
-  <Text
-    style={
-      Object {
-        "alignSelf": "center",
-        "color": "#FFA69E",
-        "fontWeight": "bold",
-        "marginTop": 20,
-      }
-    }
-  >
-    Tap an author's name to only show their posts.
-  </Text>
-  <RCTScrollView
-    data={
-      Array [
-        Object {
-          "author": Object {
-            "id": "1",
-            "name": "samwise",
-          },
-          "body": "po 
-
-## ta **toes**",
-          "id": "a",
-          "publishedAt": 2020-01-01T08:00:00.000Z,
-          "title": "tater tots",
-        },
-        Object {
-          "author": Object {
-            "id": "2",
-            "name": "gamgee",
-          },
-          "body": "boil 
-
-## em",
-          "id": "b",
-          "publishedAt": 2020-01-02T08:00:00.000Z,
-          "title": "mashed potatoes",
-        },
-      ]
-    }
-    disableVirtualization={false}
-    getItem={[Function]}
-    getItemCount={[Function]}
-    horizontal={false}
-    initialNumToRender={10}
-    keyExtractor={[Function]}
-    maxToRenderPerBatch={10}
-    numColumns={1}
-    onContentSizeChange={[Function]}
-    onEndReachedThreshold={2}
-    onLayout={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    removeClippedSubviews={false}
-    renderItem={[Function]}
-    scrollEventThrottle={50}
-    stickyHeaderIndices={Array []}
-    style={
-      Object {
-        "alignSelf": "center",
-        "marginTop": 20,
-        "width": "100%",
-      }
-    }
-    updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
-    windowSize={21}
-  >
-    <View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#84DCC6",
-              "borderRadius": 5,
-              "marginBottom": 15,
-              "marginHorizontal": 10,
-              "opacity": 1,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            }
-          }
-        >
-          <Text>
-            Title: 
-            tater tots
-          </Text>
-          <Text>
-            Summary: 
-            po ta toes
-          </Text>
-          <View
-            accessible={true}
-            focusable={true}
-            isTVSelectable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000",
-                  "fontWeight": "bold",
-                }
-              }
-            >
-              Author: 
-              samwise
-            </Text>
-          </View>
-          <Text>
-            Date: 
-            January 1, 2020
-          </Text>
-        </View>
-      </View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#84DCC6",
-              "borderRadius": 5,
-              "marginBottom": 15,
-              "marginHorizontal": 10,
-              "opacity": 1,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            }
-          }
-        >
-          <Text>
-            Title: 
-            mashed potatoes
-          </Text>
-          <Text>
-            Summary: 
-            boil em
-          </Text>
-          <View
-            accessible={true}
-            focusable={true}
-            isTVSelectable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000",
-                  "fontWeight": "bold",
-                }
-              }
-            >
-              Author: 
-              gamgee
-            </Text>
-          </View>
-          <Text>
-            Date: 
-            January 2, 2020
-          </Text>
-        </View>
-      </View>
-    </View>
-  </RCTScrollView>
-</View>
-`;
-
-exports[`<PostList /> matches the snapshot with filtered list 1`] = `
-<View>
-  <View
-    accessible={true}
-    focusable={true}
-    isTVSelectable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "alignSelf": "center",
-          "color": "#FFA69E",
-          "fontWeight": "bold",
-          "marginTop": 20,
-        }
-      }
-    >
-      Press here to show the full list again.
-    </Text>
-  </View>
-  <RCTScrollView
-    data={
-      Array [
-        Object {
-          "author": Object {
-            "id": "1",
-            "name": "samwise",
-          },
-          "body": "po 
-
-## ta **toes**",
-          "id": "a",
-          "publishedAt": 2020-01-01T08:00:00.000Z,
-          "title": "tater tots",
-        },
-      ]
-    }
-    disableVirtualization={false}
-    getItem={[Function]}
-    getItemCount={[Function]}
-    horizontal={false}
-    initialNumToRender={10}
-    keyExtractor={[Function]}
-    maxToRenderPerBatch={10}
-    numColumns={1}
-    onContentSizeChange={[Function]}
-    onEndReachedThreshold={2}
-    onLayout={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    removeClippedSubviews={false}
-    renderItem={[Function]}
-    scrollEventThrottle={50}
-    stickyHeaderIndices={Array []}
-    style={
-      Object {
-        "alignSelf": "center",
-        "marginTop": 20,
-        "width": "100%",
-      }
-    }
-    updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
-    windowSize={21}
-  >
-    <View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#84DCC6",
-              "borderRadius": 5,
-              "marginBottom": 15,
-              "marginHorizontal": 10,
-              "opacity": 1,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            }
-          }
-        >
-          <Text>
-            Title: 
-            tater tots
-          </Text>
-          <Text>
-            Summary: 
-            po ta toes
-          </Text>
-          <View
-            accessible={true}
-            focusable={true}
-            isTVSelectable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000",
-                  "fontWeight": "bold",
-                }
-              }
-            >
-              Author: 
-              samwise
-            </Text>
-          </View>
-          <Text>
-            Date: 
-            January 1, 2020
-          </Text>
-        </View>
-      </View>
-    </View>
-  </RCTScrollView>
-</View>
-`;
-
-exports[`<PostList /> only lists post by author and displays message to view all posts when list is filtered 1`] = `
-<View>
-  <View
-    accessible={true}
-    focusable={true}
-    isTVSelectable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "alignSelf": "center",
-          "color": "#FFA69E",
-          "fontWeight": "bold",
-          "marginTop": 20,
-        }
-      }
-    >
-      Press here to show the full list again.
-    </Text>
-  </View>
-  <RCTScrollView
-    data={
-      Array [
-        Object {
-          "author": Object {
-            "id": "1",
-            "name": "samwise",
-          },
-          "body": "po 
-
-## ta **toes**",
-          "id": "a",
-          "publishedAt": 2020-01-01T08:00:00.000Z,
-          "title": "tater tots",
-        },
-      ]
-    }
-    disableVirtualization={false}
-    getItem={[Function]}
-    getItemCount={[Function]}
-    horizontal={false}
-    initialNumToRender={10}
-    keyExtractor={[Function]}
-    maxToRenderPerBatch={10}
-    numColumns={1}
-    onContentSizeChange={[Function]}
-    onEndReachedThreshold={2}
-    onLayout={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    removeClippedSubviews={false}
-    renderItem={[Function]}
-    scrollEventThrottle={50}
-    stickyHeaderIndices={Array []}
-    style={
-      Object {
-        "alignSelf": "center",
-        "marginTop": 20,
-        "width": "100%",
-      }
-    }
-    updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
-    windowSize={21}
-  >
-    <View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#84DCC6",
-              "borderRadius": 5,
-              "marginBottom": 15,
-              "marginHorizontal": 10,
-              "opacity": 1,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            }
-          }
-        >
-          <Text>
-            Title: 
-            tater tots
-          </Text>
-          <Text>
-            Summary: 
-            po ta toes
-          </Text>
-          <View
-            accessible={true}
-            focusable={true}
-            isTVSelectable={true}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000",
-                  "fontWeight": "bold",
-                }
-              }
-            >
-              Author: 
-              samwise
             </Text>
           </View>
           <Text>
@@ -760,7 +419,7 @@ exports[`<PostList /> snapshots lists all posts and displays message to tap auth
       }
     }
   >
-    Tap an author's name to only show their posts.
+    Press an author's name to only show their posts.
   </Text>
   <RCTScrollView
     data={
@@ -774,7 +433,7 @@ exports[`<PostList /> snapshots lists all posts and displays message to tap auth
 
 ## ta **toes**",
           "id": "a",
-          "publishedAt": 2020-01-01T08:00:00.000Z,
+          "publishedAt": 2020-01-02T08:00:00.000Z,
           "title": "tater tots",
         },
         Object {
@@ -786,7 +445,7 @@ exports[`<PostList /> snapshots lists all posts and displays message to tap auth
 
 ## em",
           "id": "b",
-          "publishedAt": 2020-01-02T08:00:00.000Z,
+          "publishedAt": 2020-01-01T08:00:00.000Z,
           "title": "mashed potatoes",
         },
       ]
@@ -888,7 +547,7 @@ exports[`<PostList /> snapshots lists all posts and displays message to tap auth
           </View>
           <Text>
             Date: 
-            January 1, 2020
+            January 2, 2020
           </Text>
         </View>
       </View>
@@ -958,7 +617,7 @@ exports[`<PostList /> snapshots lists all posts and displays message to tap auth
           </View>
           <Text>
             Date: 
-            January 2, 2020
+            January 1, 2020
           </Text>
         </View>
       </View>
@@ -1011,7 +670,7 @@ exports[`<PostList /> snapshots only lists post by author and displays message t
 
 ## ta **toes**",
           "id": "a",
-          "publishedAt": 2020-01-01T08:00:00.000Z,
+          "publishedAt": 2020-01-02T08:00:00.000Z,
           "title": "tater tots",
         },
       ]
@@ -1113,7 +772,7 @@ exports[`<PostList /> snapshots only lists post by author and displays message t
           </View>
           <Text>
             Date: 
-            January 1, 2020
+            January 2, 2020
           </Text>
         </View>
       </View>

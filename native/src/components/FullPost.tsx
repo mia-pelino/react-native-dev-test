@@ -19,8 +19,9 @@ type FullPostNavigationProp = StackNavigationProp<
 >;
 
 type Props = {
-  route: FullPostRouteProp;
-  navigation: FullPostNavigationProp;
+  //added alt type to route for testing
+  route: FullPostRouteProp | { params: { title: string; body: string } };
+  navigation?: FullPostNavigationProp;
 };
 
 const FullPost: React.FC<Props> = ({ route, navigation }) => {
@@ -35,7 +36,6 @@ const FullPost: React.FC<Props> = ({ route, navigation }) => {
       </TouchableOpacity>
       <View>
         <Text style={styles.title}>{route.params.title}</Text>
-        {/* <Text style={styles.body}>{route.params.body}</Text> */}
         <Markdown style={markdownStyle}>{route.params.body}</Markdown>
       </View>
     </ScrollView>

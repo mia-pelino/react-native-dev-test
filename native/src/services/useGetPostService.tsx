@@ -7,27 +7,14 @@ const useGetPostService = (setPostHandler: (posts: Post[]) => void) => {
     status: 'loading',
   });
 
-  const sortPosts = (posts: Post[]): Post[] => {
-    const sortedPosts = sortPostsReverseChronologically(posts);
-    setPostHandler(sortedPosts);
-    return sortedPosts;
-  };
-
-  const sortPostsReverseChronologically = (posts: Post[]): Post[] => {
-    return [].slice
-      .call(posts)
-      .sort(
-        (newer: Post, older: Post): number =>
-          new Date(older.publishedAt).getTime() -
-          new Date(newer.publishedAt).getTime()
-      );
-  };
-
   useEffect(() => {
     fetch('http://10.0.0.21:4000/posts')
       .then((response) => response.json())
       .then((response) =>
-        setResult({ status: 'loaded', payload: sortPosts(response) })
+        setResult({
+          status: 'loaded',
+          payload: sortPosts(response, setPostHandler),
+        })
       )
       .catch((error) => setResult({ status: 'error', error }));
   }, []);
@@ -36,3 +23,22 @@ const useGetPostService = (setPostHandler: (posts: Post[]) => void) => {
 };
 
 export default useGetPostService;
+
+export const sortPosts = (
+  posts: Post[],
+  setPostHandler: (posts: Post[]) => void
+) => {
+  const sortedPosts = sortPostsReverseChronologically(posts);
+  setPostHandler(sortedPosts);
+  return sortedPosts;
+};
+
+export const sortPostsReverseChronologically = (posts: Post[]): Post[] => {
+  return [].slice
+    .call(posts)
+    .sort(
+      (newer: Post, older: Post): number =>
+        new Date(older.publishedAt).getTime() -
+        new Date(newer.publishedAt).getTime()
+    );
+};
