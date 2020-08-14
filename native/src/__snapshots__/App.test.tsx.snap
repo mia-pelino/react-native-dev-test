@@ -18,7 +18,6 @@ exports[`<App /> matches the snapshot 1`] = `
         "borderBottomLeftRadius": 5,
         "borderBottomRightRadius": 5,
         "height": "8%",
-        "marginBottom": 10,
       }
     }
   >
@@ -30,7 +29,6 @@ exports[`<App /> matches the snapshot 1`] = `
           "fontFamily": "Chalkduster",
           "fontSize": 20,
           "fontWeight": "bold",
-          "marginLeft": 10,
           "marginTop": 20,
         }
       }

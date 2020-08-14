@@ -29,6 +29,8 @@ describe('<App />', () => {
     mockedService.mockReturnValueOnce(expectedResult);
 
     const tree = renderer.create(<App />).toJSON();
-    await act(async () => {expect(tree).toMatchSnapshot(); })
+    await act(async () => {
+      expect(tree).toMatchSnapshot();
+    });
   });
 });

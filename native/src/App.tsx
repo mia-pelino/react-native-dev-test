@@ -38,7 +38,6 @@ export function App() {
   );
 }
 
-//TODO: move styles to separate file
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -47,13 +46,11 @@ const styles = StyleSheet.create({
   headerContainer: {
     backgroundColor: '#FF686B',
     alignItems: 'center',
-    marginBottom: 10,
     borderBottomRightRadius: 5,
     borderBottomLeftRadius: 5,
   },
   header: {
     fontSize: 20,
-    marginLeft: 10,
     color: '#FFF',
     alignContent: 'center',
     fontWeight: 'bold',

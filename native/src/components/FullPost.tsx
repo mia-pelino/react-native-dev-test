@@ -4,10 +4,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { RootStackParamList } from '../types/RootStackParamList';
 
-type FullPostRouteProp = RouteProp<
-  RootStackParamList,
-  'FullPost'
->;
+type FullPostRouteProp = RouteProp<RootStackParamList, 'FullPost'>;
 
 type FullPostNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -23,7 +20,10 @@ const FullPost: React.FC<Props> = ({ route, navigation }) => {
   return (
     <View style={styles.fullPost}>
       <TouchableOpacity
-      onPress={() => {navigation?.navigate('Home')}}>
+        onPress={() => {
+          navigation?.navigate('Home');
+        }}
+      >
         <Text style={styles.navigateBack}>{'<'} Return to List of Posts</Text>
       </TouchableOpacity>
       <View>

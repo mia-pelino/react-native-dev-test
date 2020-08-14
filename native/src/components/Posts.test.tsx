@@ -78,7 +78,9 @@ describe('<Posts />', () => {
     mockedService.mockReturnValueOnce(expectedResult);
 
     const tree = renderer.create(<Posts />).toJSON();
-    await act(async () => {expect(tree).toMatchSnapshot(); })
+    await act(async () => {
+      expect(tree).toMatchSnapshot();
+    });
   });
 
   it('matches the snapshot', async () => {
@@ -89,7 +91,9 @@ describe('<Posts />', () => {
     mockedService.mockReturnValueOnce(expectedResult);
 
     const tree = renderer.create(<Posts />).toJSON();
-    await act(async () => {expect(tree).toMatchSnapshot(); })
+    await act(async () => {
+      expect(tree).toMatchSnapshot();
+    });
   });
 
   it('matches the snapshot', async () => {
@@ -100,6 +104,8 @@ describe('<Posts />', () => {
     mockedService.mockReturnValueOnce(expectedResult);
 
     const tree = renderer.create(<Posts />).toJSON();
-    await act(async () => {expect(tree).toMatchSnapshot(); })
+    await act(async () => {
+      expect(tree).toMatchSnapshot();
+    });
   });
 });
