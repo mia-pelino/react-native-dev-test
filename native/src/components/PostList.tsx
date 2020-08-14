@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { formatSummary, formatDate } from '../stringUtils';
 import { Post } from '../types/Post';
 
 type Props = {
@@ -23,14 +24,6 @@ const PostList: React.FC<Props> = ({
   pressPostHandler,
   displayAllPostsHandler,
 }) => {
-  const formatSummary = (body: string): string =>
-    body.split(/\n\n/)[1].slice(2, 40);
-
-  const formatDate = (dateString: string): string => {
-    let options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString([], options);
-  };
-
   return (
     <View>
       {isFiltered ? (
