@@ -207,8 +207,7 @@ exports[`<App /> matches the snapshot 1`] = `
                         }
                       }
                     >
-                      <RCTSafeAreaView
-                        emulateUnlessSupported={true}
+                      <View
                         style={
                           Object {
                             "alignItems": "center",
@@ -224,7 +223,7 @@ exports[`<App /> matches the snapshot 1`] = `
                           hidesWhenStopped={true}
                           size="small"
                         />
-                      </RCTSafeAreaView>
+                      </View>
                     </View>
                   </View>
                 </View>
