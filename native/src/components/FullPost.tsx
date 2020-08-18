@@ -19,9 +19,8 @@ type FullPostNavigationProp = StackNavigationProp<
 >;
 
 type Props = {
-  //added alt type to route for testing
-  route: FullPostRouteProp | { params: { title: string; body: string } };
-  navigation?: FullPostNavigationProp;
+  route: FullPostRouteProp;
+  navigation: FullPostNavigationProp;
 };
 
 const FullPost: React.FC<Props> = ({ route, navigation }) => {

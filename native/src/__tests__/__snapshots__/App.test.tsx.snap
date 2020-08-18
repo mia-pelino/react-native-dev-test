@@ -33,7 +33,7 @@ exports[`<App /> matches the snapshot 1`] = `
         }
       }
     >
-      Latin Daily Reader
+      Watermelon Reader
     </Text>
   </View>
   <View

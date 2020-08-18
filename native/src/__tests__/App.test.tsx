@@ -11,17 +11,6 @@ jest.mock('../services/useGetPostService');
 const mockedService = mocked(useGetPostService, true);
 
 describe('<App />', () => {
-  it('renders without crashing', () => {
-    const expectedResult: Service<Post[]> = {
-      status: 'loading',
-    };
-    mockedService.mockReturnValueOnce(expectedResult);
-
-    const tree = renderer.create(<App />).toJSON();
-
-    expect(tree).not.toBeNull();
-  });
-
   it('matches the snapshot', async () => {
     const expectedResult: Service<Post[]> = {
       status: 'loading',
