@@ -1,6 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Posts /> snapshots displays ActivityIndicator while service status is still loading 1`] = `
+exports[`<Posts />  snapshots shows error screen for service status error 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#000",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text>
+    Oops, I did it again.
+  </Text>
+</View>
+`;
+
+exports[`<Posts />  snapshots shows loading screen while service status is still loading 1`] = `
 <View
   style={
     Object {
@@ -20,24 +37,7 @@ exports[`<Posts /> snapshots displays ActivityIndicator while service status is 
 </View>
 `;
 
-exports[`<Posts /> snapshots displays error message for error service status 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#000",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }
->
-  <Text>
-    Oops, I did it again.
-  </Text>
-</View>
-`;
-
-exports[`<Posts /> snapshots displays post list when results have loaded 1`] = `
+exports[`<Posts />  snapshots shows post list screen when results have loaded 1`] = `
 <View
   style={
     Object {

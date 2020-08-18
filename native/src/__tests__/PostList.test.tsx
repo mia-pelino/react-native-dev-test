@@ -27,7 +27,7 @@ describe('<PostList />', () => {
     },
   ];
 
-  describe('snapshots', () => {
+  describe('snapshot', () => {
     it('lists all posts and displays message to tap author for filtering when list is not filtered', async () => {
       const tree = renderer
         .create(
@@ -64,25 +64,7 @@ describe('<PostList />', () => {
       });
     });
 
-    it('displays full post list', async () => {
-      const tree = renderer
-        .create(
-          <PostList
-            postList={postData}
-            isFiltered={false}
-            pressAuthorHandler={() => {}}
-            pressPostHandler={() => {}}
-            displayAllPostsHandler={() => {}}
-          />
-        )
-        .toJSON();
-
-      await act(async () => {
-        expect(tree).toMatchSnapshot();
-      });
-    });
-
-    it('displays a single post list when loaded result size is one', async () => {
+    it('lists a single post list when loaded result size is one', async () => {
       const tree = renderer
         .create(
           <PostList
@@ -100,7 +82,7 @@ describe('<PostList />', () => {
       });
     });
 
-    it('displays an empty post list when loaded results are empty', async () => {
+    it('shows an empty post list when loaded results are empty', async () => {
       const tree = renderer
         .create(
           <PostList
@@ -119,15 +101,14 @@ describe('<PostList />', () => {
     });
   });
 
-  describe('callback props', () => {
+  describe('interactivity', () => {
     let testIsFiltered: boolean = false;
     let mockPressAuthor = jest.fn(() => (testIsFiltered = true));
     let mockPressPost = jest.fn();
     let mockDisplayAllPosts = jest.fn(() => (testIsFiltered = false));
 
-    //having trouble getting this to work
     it('calls pressAuthorHandler when author is selected', () => {
-      let wrapper = render(
+      const wrapper = render(
         <PostList
           postList={postData}
           isFiltered={testIsFiltered}
@@ -137,15 +118,13 @@ describe('<PostList />', () => {
         />
       );
 
-      // fireEvent.press(wrapper.getByText('samwise'));
+      fireEvent.press(wrapper.getByText('Author: samwise'));
 
-      // expect(mockPressAuthor).toHaveBeenCalledTimes(1);
-      expect(mockPressAuthor).toHaveBeenCalledTimes(0);
+      expect(mockPressAuthor).toHaveBeenCalledTimes(1);
     });
 
-    //having trouble getting this to work
     it('calls pressPostHandler when author is selected', () => {
-      let wrapper = render(
+      const wrapper = render(
         <PostList
           postList={postData}
           isFiltered={testIsFiltered}
@@ -155,17 +134,16 @@ describe('<PostList />', () => {
         />
       );
 
-      // fireEvent.press(wrapper.getByText('tater tots'));
+      fireEvent.press(wrapper.getByText('Title: tater tots'));
 
-      // expect(mockPressPost).toHaveBeenCalledTimes(1);
-      expect(mockPressPost).toHaveBeenCalledTimes(0);
+      expect(mockPressPost).toHaveBeenCalledTimes(1);
     });
 
-    it('calls displayAllPostsHandler when instructional message is pressed', () => {
-      let wrapper = render(
+    it('calls displayAllPostsHandler when instruction is pressed', () => {
+      const wrapper = render(
         <PostList
           postList={postData}
-          isFiltered={!testIsFiltered}
+          isFiltered={testIsFiltered}
           pressAuthorHandler={mockPressAuthor}
           pressPostHandler={mockPressPost}
           displayAllPostsHandler={mockDisplayAllPosts}

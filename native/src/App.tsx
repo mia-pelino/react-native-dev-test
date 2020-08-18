@@ -22,7 +22,7 @@ export function App() {
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
         <View style={headerContainerStyle()}>
-          <Text style={headerStyle()}>Latin Daily Reader</Text>
+          <Text style={headerStyle()}>Watermelon Reader</Text>
         </View>
         <RootStack.Navigator
           initialRouteName="Home"
